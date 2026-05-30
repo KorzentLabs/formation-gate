@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+import { runFormationGate, parseCLIArgs } from '../dist/index.js';
+
+const args = process.argv.slice(2);
+const { configPath, input } = parseCLIArgs(args);
+
+runFormationGate(configPath, input)
+  .then((output) => {
+    console.log(JSON.stringify(output, null, 2));
+    process.exit(output.status === 'FAILED' ? 1 : 0);
+  })
+  .catch((error) => {
+    console.error('Formation Gate error:', error);
+    process.exit(1);
+  });

@@ -1,0 +1,38 @@
+name: 'Formation Gate'
+description: 'Proof-only diagnostic GitHub Action for code formation quality'
+inputs:
+  config:
+    description: 'Path to formation-gate config file'
+    required: false
+    default: './formation-gate.config.json'
+  pr-number:
+    description: 'Pull request number'
+    required: false
+  branch:
+    description: 'Branch name'
+    required: false
+  commit-sha:
+    description: 'Commit SHA'
+    required: false
+  changed-files:
+    description: 'Comma-separated list of changed files'
+    required: false
+  test-evidence:
+    description: 'Test evidence (e.g., test output log)'
+    required: false
+  build-evidence:
+    description: 'Build evidence (e.g., build output log)'
+    required: false
+  verification-commands:
+    description: 'Comma-separated list of verification commands'
+    required: false
+outputs:
+  status:
+    description: 'Formation gate status (PASS, FAILED, UNVERIFIED, SKIPPED)'
+  receipt:
+    description: 'Formation gate receipt JSON'
+  pr-comment:
+    description: 'Formation gate PR comment markdown'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

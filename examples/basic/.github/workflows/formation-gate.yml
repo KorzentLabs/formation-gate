@@ -1,0 +1,37 @@
+name: Formation Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  formation-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Formation Gate
+        uses: ./formation-gate
+        with:
+          pr-number: ${{ github.event.pull_request.number }}
+          branch: ${{ github.event.pull_request.head.ref }}
+          commit-sha: ${{ github.event.pull_request.head.sha }}
+          changed-files: ${{ steps.changes.outputs.files }}
+          test-evidence: ${{ steps.test.outputs.result }}
+          build-evidence: ${{ steps.build.outputs.result }}
+          verification-commands: npm test,npm run build
+
+      - name: Comment PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const comment = '${{ steps.formation-gate.outputs.pr-comment }}';
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

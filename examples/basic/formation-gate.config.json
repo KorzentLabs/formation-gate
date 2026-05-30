@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "requireTestEvidence": true,
+    "requireBuildEvidence": true,
+    "requireVerificationCommands": true,
+    "requireDirtyGitStatusEvidence": false,
+    "forbidAuthorityLanguage": true,
+    "forbidApprovalClaims": true,
+    "requireProofOnly": true,
+    "requireExecutionAuthorityFalse": true,
+    "requireKnownGaps": true,
+    "requireReceiptHash": true
+  },
+  "scope": {
+    "allowedPatterns": ["src/**", "lib/**", "test/**"],
+    "excludedPatterns": ["node_modules/**", "dist/**", ".git/**"]
+  },
+  "output": {
+    "format": "json",
+    "includeReceipt": true,
+    "includePRComment": true
+  }
+}

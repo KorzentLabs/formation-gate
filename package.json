@@ -1,0 +1,30 @@
+{
+  "name": "formation-gate",
+  "version": "0.1.0",
+  "description": "Formation Gate - Proof-only diagnostic GitHub Action for code formation quality",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "formation-gate": "./bin/formation-gate"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "github-action",
+    "code-formation",
+    "diagnostic",
+    "proof-only"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

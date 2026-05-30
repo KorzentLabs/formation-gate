@@ -1,0 +1,76 @@
+{
+  "receiptVersion": "0.1.0",
+  "toolName": "formation-gate",
+  "toolVersion": "0.1.0",
+  "status": "PASS",
+  "proofOnly": true,
+  "executionAuthority": false,
+  "checks": [
+    {
+      "id": "test-evidence",
+      "name": "Test Evidence",
+      "status": "PASS",
+      "message": "Test evidence provided",
+      "evidence": "npm test passed"
+    },
+    {
+      "id": "build-evidence",
+      "name": "Build Evidence",
+      "status": "PASS",
+      "message": "Build evidence provided",
+      "evidence": "npm run build passed"
+    },
+    {
+      "id": "verification-commands",
+      "name": "Verification Commands",
+      "status": "PASS",
+      "message": "Verification commands provided: 2",
+      "evidence": "[\"npm test\",\"npm run build\"]"
+    },
+    {
+      "id": "forbidden-authority-language",
+      "name": "Forbidden Authority Language",
+      "status": "PASS",
+      "message": "No forbidden authority language detected"
+    },
+    {
+      "id": "forbidden-approval-claims",
+      "name": "Forbidden Approval Claims",
+      "status": "PASS",
+      "message": "No forbidden approval claims detected"
+    },
+    {
+      "id": "proof-only",
+      "name": "Proof-Only Enforcement",
+      "status": "PASS",
+      "message": "Receipt correctly marked as proof-only"
+    },
+    {
+      "id": "execution-authority-false",
+      "name": "Execution Authority False",
+      "status": "PASS",
+      "message": "Receipt correctly marked with executionAuthority=false"
+    },
+    {
+      "id": "known-gaps",
+      "name": "Known Gaps Section",
+      "status": "PASS",
+      "message": "Receipt includes known gaps section"
+    },
+    {
+      "id": "receipt-hash",
+      "name": "Receipt Hash",
+      "status": "PASS",
+      "message": "Receipt includes valid hash"
+    }
+  ],
+  "knownGaps": [],
+  "generatedAt": "2026-05-27T00:00:00.000Z",
+  "receiptHash": "sha256:example-hash-value",
+  "context": {
+    "prNumber": 123,
+    "branch": "feature/example",
+    "commitSha": "abc123",
+    "changedFiles": ["src/index.ts", "test/index.test.ts"]
+  }
+}
