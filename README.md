@@ -2,7 +2,13 @@
 
 **Status: Developer Preview**
 
-Formation Gate is a proof-only diagnostic GitHub Action for code formation quality. It verifies that code changes include proper evidence for claims made about testing, building, and verification.
+Formation Gate is a standalone diagnostic verifier.
+
+It checks whether software-change claims are supported by evidence.
+
+Formation Gate generates proof-only verification receipts.
+
+It does not approve code, guarantee correctness, certify security, merge pull requests, deploy software, or replace human review.
 
 ## Important Warnings
 
