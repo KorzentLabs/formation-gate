@@ -1,5 +1,8 @@
 name: 'Formation Gate'
 description: 'Proof-only diagnostic GitHub Action for code formation quality'
+branding:
+  icon: 'layers'
+  color: 'blue'
 inputs:
   config:
     description: 'Path to formation-gate config file'
